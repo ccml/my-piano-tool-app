@@ -1,0 +1,135 @@
+{
+  "frames": {
+    "white-middle-key": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 132,
+        "h": 800
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 132,
+        "h": 800
+      },
+      "sourceSize": {
+        "w": 132,
+        "h": 800
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "white-right-key": {
+      "frame": {
+        "x": 0,
+        "y": 800,
+        "w": 133,
+        "h": 799
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 133,
+        "h": 799
+      },
+      "sourceSize": {
+        "w": 133,
+        "h": 799
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "white-left-key": {
+      "frame": {
+        "x": 132,
+        "y": 0,
+        "w": 128,
+        "h": 798
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 798
+      },
+      "sourceSize": {
+        "w": 128,
+        "h": 798
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "mypianotool-logo": {
+      "frame": {
+        "x": 0,
+        "y": 1599,
+        "w": 192,
+        "h": 192
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 192,
+        "h": 192
+      },
+      "sourceSize": {
+        "w": 192,
+        "h": 192
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "black-key": {
+      "frame": {
+        "x": 0,
+        "y": 1791,
+        "w": 77,
+        "h": 517
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 517
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 517
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "piano.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1024,
+      "h": 2048
+    },
+    "scale": 1
+  }
+}
