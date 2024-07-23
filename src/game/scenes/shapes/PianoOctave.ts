@@ -20,7 +20,7 @@ export class PianoOctave extends GameObjects.Graphics {
     
     ctx: CanvasRenderingContext2D | null;
 
-    constructor(scene: Scene, private zoomFactor: number, clavierPiano: ToucheClavier[]) {
+    constructor(scene: Scene, private zoomFactor: number) {
         super(scene);
 
         const octave = document.createElement('canvas');
@@ -38,7 +38,6 @@ export class PianoOctave extends GameObjects.Graphics {
         this.addKey(Solfege.NOTE_A, Solfege.ALTERATION_BEMOL);
         this.addKey(Solfege.NOTE_B);
         this.addKey(Solfege.NOTE_B, Solfege.ALTERATION_BEMOL);
-
     }
 
     getWidth() : number {
@@ -86,6 +85,59 @@ export class PianoOctave extends GameObjects.Graphics {
                         )
             }
         );
+    }
+
+    public applyMetadata(parentContainer: GameObjects.Container, clavierPiano: ToucheClavier[]) {
+        const bounds = parentContainer.getLocalPoint(0, 0);
+        this.scene.add.text( 
+            20, 
+            200, 
+            JSON.stringify(bounds)
+        )
+        .setColor('white')
+        .setFontSize(20)
+        .setStroke('black', 1);
+        
+        let index = 0;
+        
+        clavierPiano.forEach(
+            toucheMetaData => {
+                let isBlackKey = toucheMetaData.touche.nbrAlteration !== 0;
+                
+                const xOffset = 
+                    isBlackKey ?
+                        index * this.baseSizeWhiteX - this.baseSizeBlackX / 2 + 10
+                    :
+                        index * this.baseSizeWhiteX + 10;
+                
+                const yOffset = 
+                    isBlackKey ? 
+                        this.baseSizeBlackY - 20
+                    :
+                        this.baseSizeWhiteY - 20;
+
+                this.scene.add.text( 
+                    - bounds.x + xOffset, 
+                    - bounds.y + yOffset, 
+                    toucheMetaData.note.noteNonAlteree
+                )
+                    .setColor(isBlackKey ? 'white' : 'black')
+                    .setFontSize(20);
+                
+                if(toucheMetaData.note.nbrAlteration !== 0) {
+                    this.scene.add.text( 
+                        - bounds.x + xOffset + 14,
+                        - bounds.y + yOffset, 
+                        (toucheMetaData.note.alteration??'').repeat(toucheMetaData.note.nbrAlteration)
+                    )
+                        .setColor(isBlackKey ? 'white' : 'black')
+                        .setFontSize(12);
+                }
+
+                index += isBlackKey ? 0 : 1;
+            }
+        );
+        
     }
 
 }
